@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>房仲特務寶爸小吳 - 專屬顧問</title>
-    <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         html { scroll-behavior: smooth; }
@@ -15,14 +13,12 @@
 </head>
 <body class="bg-gray-900 text-gray-200 antialiased">
 
-    <!-- 頂部導覽列 (黑金風格) -->
     <nav class="fixed w-full bg-black/90 backdrop-blur-md border-b border-gray-800 z-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="text-xl font-bold text-amber-500 flex items-center gap-2 tracking-wide">
                     <i data-lucide="shield-check"></i> 寶爸小吳
                 </div>
-                <!-- 電腦版選單 -->
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="text-gray-300 hover:text-amber-500 transition font-medium">首頁</a>
                     <a href="#services" class="text-gray-300 hover:text-amber-500 transition font-medium">專業服務</a>
@@ -33,10 +29,8 @@
         </div>
     </nav>
 
-    <!-- 首頁介紹區塊 -->
     <section id="home" class="pt-32 pb-20 px-4 min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-black">
         <div class="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
-            <!-- 文字區 -->
             <div class="md:w-1/2 text-center md:text-left">
                 <h2 class="text-amber-500 font-semibold tracking-widest uppercase mb-3 text-sm border-l-2 border-amber-500 pl-3 ml-auto mr-auto md:ml-0 inline-block md:block">Top Agent Services</h2>
                 <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
@@ -55,12 +49,9 @@
                     </a>
                 </div>
             </div>
-            <!-- 大頭貼照/插圖區 (特務/質感風格) -->
             <div class="md:w-1/2 flex justify-center">
                 <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-tr from-gray-800 to-gray-700 rounded-full flex items-center justify-center border-4 border-amber-500 shadow-[0_0_40px_rgba(245,158,11,0.15)] relative">
-                    <!-- 放上寶爸小吳的真實大頭貼 (高畫質版) -->
                     <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/572051034_122227760876248980_239160365600808975_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=kIU7WgUmOCwQ7kNvwEpxzsk&_nc_oc=AdpPXQ7MF-FMBd6InqRZAhPP3nTJaBh1H70Ey787Dch67KEjZCb1GdpHfrub18nHv48&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=jwedxEj08fgzZAFMri6EtA&_nc_ss=7a3a8&oh=00_Af1LoTugBSZCayWkJiNj5LIGJxx5grn0FBdmMG8rlrUx0A&oe=69DBCC95" alt="寶爸小吳" class="w-full h-full object-cover rounded-full">
-                    <!-- 裝飾 -->
                     <div class="absolute top-8 right-8 w-4 h-4 bg-amber-300 rounded-full shadow-[0_0_10px_rgba(252,211,77,0.8)]"></div>
                     <div class="absolute bottom-12 left-4 w-6 h-6 bg-amber-500 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.8)]"></div>
                 </div>
@@ -68,14 +59,12 @@
         </div>
     </section>
 
-    <!-- 服務技能區塊 -->
     <section id="services" class="py-20 bg-black px-4 border-t border-gray-800">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-bold text-center mb-12 text-white">
                 <span class="text-amber-500">///</span> 跨領域專業服務 <span class="text-amber-500">///</span>
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- 服務 1 -->
                 <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl text-center hover:border-amber-500 transition duration-300 group">
                     <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
                         <i data-lucide="home" class="w-8 h-8 text-amber-500"></i>
@@ -83,7 +72,6 @@
                     <h3 class="font-bold text-xl mb-3 text-white">不動產買賣</h3>
                     <p class="text-gray-400 leading-relaxed">精準為您媒合好屋、豪宅與商辦，提供透明的市場行情分析與安心的交易流程。</p>
                 </div>
-                <!-- 服務 2 -->
                 <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl text-center hover:border-amber-500 transition duration-300 group">
                     <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
                         <i data-lucide="shield" class="w-8 h-8 text-amber-500"></i>
@@ -91,7 +79,6 @@
                     <h3 class="font-bold text-xl mb-3 text-white">產險規劃</h3>
                     <p class="text-gray-400 leading-relaxed">火險、地震險、車險與各類財產保險，為您的珍貴資產建構最堅固的防護網。</p>
                 </div>
-                <!-- 服務 3 -->
                 <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl text-center hover:border-amber-500 transition duration-300 group">
                     <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
                         <i data-lucide="car" class="w-8 h-8 text-amber-500"></i>
@@ -103,14 +90,11 @@
         </div>
     </section>
 
-    <!-- 物件區 (升級為動態資料區) -->
     <section id="objects" class="py-20 bg-gray-900 px-4">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-bold text-center mb-12 text-white">精選推薦<span class="text-amber-500">物件</span></h2>
             
-            <!-- 這個 div 用來裝動態產生的物件卡片 -->
             <div id="objects-container" class="grid md:grid-cols-2 gap-8">
-                <!-- 當沒有物件時，會顯示這段文字 -->
                 <div class="col-span-full text-center py-10 border border-dashed border-gray-700 rounded-2xl">
                     <i data-lucide="package-open" class="w-12 h-12 text-gray-600 mx-auto mb-4"></i>
                     <p class="text-gray-400 text-lg">目前正在為您嚴選最新物件，敬請期待！</p>
@@ -119,12 +103,10 @@
         </div>
     </section>
 
-    <!-- 聯絡區塊 & 頁尾 -->
     <footer id="contact" class="bg-black text-white py-16 px-4 text-center border-t border-gray-800">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-3xl font-bold mb-6 text-white">啟動您的專屬特務任務</h2>
             <p class="text-gray-400 mb-8 text-lg">買房、買車、買保障，交給寶爸小吳一次為您搞定！<br>歡迎隨時與我聯繫，為您提供一對一尊榮諮詢。</p>
-            <!-- 加上 flex-wrap 讓多個按鈕在手機版能自動換行排版 -->
             <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-12">
                 <a href="tel:0977754373" class="inline-flex justify-center items-center gap-2 bg-gray-800 border border-gray-700 text-white px-8 py-4 rounded-full font-bold hover:border-amber-500 transition">
                     <i data-lucide="smartphone"></i> 0977-754-373
@@ -136,7 +118,6 @@
                     <i data-lucide="facebook"></i> Facebook
                 </a>
             </div>
-            <!-- 小秘書主動為您升級：加入專業證號與公司名稱，提升信任感 -->
             <div class="pt-8 border-t border-gray-800 text-gray-500 text-sm leading-relaxed">
                 <p class="mb-2">台慶高鐵文興－康淳不動產有限公司</p>
                 <p class="mb-4">營業員證號：(113) 登字第463308號 ｜ 經紀人證號：(97) 登字第000124號</p>
@@ -145,9 +126,6 @@
         </div>
     </footer>
 
-    <!-- ========================================== -->
-    <!-- 🟢 寶爸小吳專用：物件更新區塊 🟢 -->
-    <!-- ========================================== -->
     <script>
         // 【小秘書教學】
         // 以後要新增物件，只要把大括號 { ... } 寫在 myObjects 裡面即可！
@@ -157,13 +135,25 @@
             // 💡 案子 1：為您整理好的「湖口大透天」
             {
                 type: "house", 
-                img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/659684677_122249583896248980_2770425257039636179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_ohc=FMoQkcZPhKUQ7kNvwECkinl&_nc_oc=AdqG9qaZvag4HkH8aC3z2LrItH72894l02BhSWyzBG0f1Bjqa0T0g2RQtIoDaJA9vQI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=KcPF5w8Mi-3Z28BaydeNAg&_nc_ss=7a3a8&oh=00_Af0dSqRBERa2oSBXKnlrNsAjZdbJR5od_akzK0S_e_5GUg&oe=69DC01FE", // 👈 小秘書幫您放上真實照片網址了！
+                img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/659684677_122249583896248980_2770425257039636179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_ohc=FMoQkcZPhKUQ7kNvwECkinl&_nc_oc=AdqG9qaZvag4HkH8aC3z2LrItH72894l02BhSWyzBG0f1Bjqa0T0g2RQtIoDaJA9vQI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=KcPF5w8Mi-3Z28BaydeNAg&_nc_ss=7a3a8&oh=00_Af0dSqRBERa2oSBXKnlrNsAjZdbJR5od_akzK0S_e_5GUg&oe=69DC01FE", 
                 tag: "超強 CP 值", 
                 title: "湖口楊湖天下 朝南大透天", 
                 price: "售 1,468 萬",              
                 info: "1～4樓 ｜ 建坪 75 坪 ｜ 前院雙平車", 
                 desc: "稀有帝王朝南座向，二樓整層大主臥，頂樓升級太陽能板與氣密窗！免繳管理費，近湖口車站與商圈，機能滿分。", 
                 link: "https://www.facebook.com/share/p/1BgZ3Uno4m/", 
+                btnText: "前往臉書看詳細照片"
+            },
+            // 💡 案子 2：新增的「遠雄六家匯」
+            {
+                type: "house", 
+                img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/659799020_122249456276248980_55330295829858887_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=fWP0TZ9oCRwQ7kNvwHDTC9I&_nc_oc=AdrmO1Yr941NOukuKUNJDpV9h7dFAWgWau3oIlJKw0UE3YOVhdwIlGux36nu82McnmI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=uyoNE_-gHR1irNkSdR133w&_nc_ss=7a3a8&oh=00_Af2MCKGJKXYhspJGW0EjizmXSmwSj6_jCRd300oSNl_gsg&oe=69DD1567", 
+                tag: "大降 300 萬", 
+                title: "竹北遠雄六家匯 22樓景觀戶", 
+                price: "售 3,998 萬",              
+                info: "3房(可改4房) ｜ 主建 30.6 坪 ｜ 雙陽台", 
+                desc: "東興國中/國小雙星學區！全齡化社區附室內泳池。屋主誠意大降300萬，高鐵商圈換屋首選。", 
+                link: "https://www.facebook.com/share/p/1CWGhrC1dA/", 
                 btnText: "前往臉書看詳細照片"
             }
         ];
@@ -208,7 +198,6 @@
         }
     </script>
 
-    <!-- 初始化 Icons -->
     <script>
         lucide.createIcons();
     </script>
