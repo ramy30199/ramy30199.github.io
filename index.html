@@ -20,10 +20,10 @@
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            /* 🟢 已經為您設定好您剛傳送的專屬背景照！ */
+            /* 🟢 小秘書已幫您把背景圖也改回臉書的直接網址，保證馬上看得到！ */
             background-image: url('https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/494734490_122197485608248980_6869680787341785767_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=b895b5&_nc_ohc=ZglCW78XIoQQ7kNvwFx05mO&_nc_oc=Adp4lGKWHDlhARna82fs1lSWIsNMpg8D4wIs8nuFKlz5vHdoDHn7ER_SkbidGHynZzQ&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=HuQX2b0oMnZ4boQyA6TQWA&_nc_ss=7a3a8&oh=00_Af3at3EX2VP-cmlLMP8OBmo6bZNkKNhUQR8e7GmjZoiXMA&oe=69DEBDCD');
             background-size: cover;
-            background-position: right center; /* 🟢 調整對齊右邊，確保冠軍紅字完整出現 */
+            background-position: right center; /* 調整對齊右邊，確保冠軍紅字完整出現 */
             opacity: 0.25; /* 透明度 0.25，保留質感又不會蓋過文字 */
             z-index: 0;
         }
@@ -69,19 +69,19 @@
 
     <!-- 首頁區塊：已加入背景圖片層 -->
     <section id="home" class="pt-32 pb-20 px-4 min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-black">
-        <!-- 🟢 將 flex 排序改為正常排序，大頭照放前(左)、文字放後(右) -->
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
             
-            <!-- 🟢 大頭貼移到左邊，讓出右邊的空間給冠軍字樣 -->
+            <!-- 🟢 大頭貼移到左邊 -->
             <div class="md:w-5/12 flex justify-center mb-8 md:mb-0">
                 <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-tr from-gray-800 to-gray-700 rounded-full flex items-center justify-center border-4 border-amber-500 shadow-[0_0_40px_rgba(245,158,11,0.15)] relative">
-                    <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/572051034_122227760876248980_239160365600808975_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=kIU7WgUmOCwQ7kNvwEpxzsk&_nc_oc=AdpPXQ7MF-FMBd6InqRZAhPP3nTJaBh1H70Ey787Dch67KEjZCb1GdpHfrub18nHv48&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=jwedxEj08fgzZAFri6EtA&_nc_ss=7a3a8&oh=00_Af1LoTugBSZCayWkJiNj5LIGJxx5grn0FBdmMG8rlrUx0A&oe=69DBCC95" alt="寶爸小吳" class="w-full h-full object-cover rounded-full">
+                    <!-- 🟢 已經為您換上最新指定的臉書大頭照網址囉！ -->
+                    <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/466852453_122165798312248980_8366572006971903060_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=53a332&_nc_ohc=AwXfTzu8igwQ7kNvwEP9xE3&_nc_oc=AdryjmfjlP4BB4Uonoalsn0khOGBYvbztld3hfulrK7u2talrUdrqplMMgL99csBQ2U&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=I2MtyNzOiHh_C2GT4kZgnQ&_nc_ss=7a3a8&oh=00_Af2yRAT7dHH2B0zzq1KOTdn_n1KUyLAU1I4ms1D1U3oqYQ&oe=69DEA5C0" alt="寶爸小吳" onerror="this.src='https://ui-avatars.com/api/?name=吳&background=f59e0b&color=fff&size=256'" class="w-full h-full object-cover rounded-full">
                     <div class="absolute top-8 right-8 w-4 h-4 bg-amber-300 rounded-full shadow-[0_0_10px_rgba(252,211,77,0.8)]"></div>
                     <div class="absolute bottom-12 left-4 w-6 h-6 bg-amber-500 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.8)]"></div>
                 </div>
             </div>
 
-            <!-- 🟢 文字區移到右邊 (因為文字間有空隙，可以透出背景的冠軍字樣) -->
+            <!-- 🟢 文字區移到右邊 -->
             <div class="md:w-7/12 text-center md:text-left">
                 <h2 class="text-amber-500 font-semibold tracking-widest uppercase mb-3 text-sm border-l-2 border-amber-500 pl-3 ml-auto mr-auto md:ml-0 inline-block md:block">Top Agent Services</h2>
                 <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
