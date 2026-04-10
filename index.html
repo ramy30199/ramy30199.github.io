@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8"><meta name="google-site-verification" content="WmXNriZK2ynRAKMAfDHYNviRVXkw4-rqGC6dYcwMBsY" />
+    <meta name="google-site-verification" content="WmXNriZK2ynRAKMAfDHYNviRVXkw4-rqGC6dYcwMBsY" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 🟢 小秘書已為您更新超強 SEO 網頁標題 -->
-    <title>房仲特務｜寶爸小吳｜吳聿傑｜不動產買賣、產險、汽車銷售</title>
+    <title>新竹/竹北房仲推薦｜房仲特務寶爸小吳 (吳聿傑)｜不動產買賣、產險、汽車銷售</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         html { scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         
-        /* 🟢 七彩霓虹燈專屬動畫特效 */
         @keyframes neon-rainbow-anim {
             0% { color: #ff3b3b; text-shadow: 0 0 5px #ff3b3b, 0 0 10px #ff3b3b, 0 0 20px #ff3b3b; }
             16% { color: #ff9100; text-shadow: 0 0 5px #ff9100, 0 0 10px #ff9100, 0 0 20px #ff9100; }
@@ -78,31 +77,31 @@
     </section>
 
     <section id="services" class="py-20 bg-black px-4 border-t border-gray-800">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 text-white">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12 text-white">
                 <span class="text-amber-500">///</span> 跨領域專業服務 <span class="text-amber-500">///</span>
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl text-center hover:border-amber-500 transition duration-300 group">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-amber-500 transition duration-300 group">
                     <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
                         <i data-lucide="home" class="w-8 h-8 text-amber-500"></i>
                     </div>
                     <h3 class="font-bold text-xl mb-3 text-white">不動產買賣</h3>
-                    <p class="text-gray-400 leading-relaxed">精準為您媒合好屋、豪宅與商辦，提供透明的市場行情分析與安心的交易流程。</p>
+                    <p class="text-gray-400 leading-relaxed">精準為您媒合好屋、豪宅與商辦，提供透明市場分析。</p>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl text-center hover:border-amber-500 transition duration-300 group">
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-amber-500 transition duration-300 group">
                     <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
                         <i data-lucide="shield" class="w-8 h-8 text-amber-500"></i>
                     </div>
                     <h3 class="font-bold text-xl mb-3 text-white">產險規劃</h3>
-                    <p class="text-gray-400 leading-relaxed">火險、地震險、車險與各類財產保險，為您的珍貴資產建構最堅固的防護網。</p>
+                    <p class="text-gray-400 leading-relaxed">火險、車險等各類財產保險，建構資產防護網。</p>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl text-center hover:border-amber-500 transition duration-300 group">
+                <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-amber-500 transition duration-300 group">
                     <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
                         <i data-lucide="car" class="w-8 h-8 text-amber-500"></i>
                     </div>
                     <h3 class="font-bold text-xl mb-3 text-white">汽車銷售</h3>
-                    <p class="text-gray-400 leading-relaxed">嚴選優質車款，依據您的家庭與商務需求，提供最專業的購車建議與完善售後。</p>
+                    <p class="text-gray-400 leading-relaxed">嚴選優質車款，提供購車建議與完善售後。</p>
                 </div>
             </div>
         </div>
@@ -112,7 +111,7 @@
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-bold text-center mb-12 text-white">精選推薦<span class="text-amber-500">物件</span></h2>
             <div id="objects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 動態產生內容 -->
+                <!-- 動態物件產生 -->
             </div>
         </div>
     </section>
@@ -120,38 +119,27 @@
     <footer id="contact" class="bg-black text-white py-16 px-4 text-center border-t border-gray-800">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-3xl font-bold mb-6 text-white">啟動您的專屬特務任務</h2>
-            <p class="text-gray-400 mb-8 text-lg">買房、買車、買保障，交給寶爸小吳一次為您搞定！<br>歡迎隨時與我聯繫，為您提供一對一尊榮諮詢。</p>
+            <p class="text-gray-400 mb-8 text-lg">買房、買車、買保障，交給寶爸小吳一次為您搞定！</p>
             <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-12">
                 <a href="tel:0977754373" class="inline-flex justify-center items-center gap-2 bg-gray-800 border border-gray-700 text-white px-8 py-4 rounded-full font-bold hover:border-amber-500 transition">
                     <i data-lucide="smartphone"></i> 0977-754-373
                 </a>
-                <a href="https://line.me/ti/p/~rany30199" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-2 bg-gradient-to-r from-amber-600 to-amber-400 text-black px-8 py-4 rounded-full font-bold hover:opacity-90 transition shadow-[0_0_15px_rgba(245,158,11,0.3)]">
+                <a href="https://line.me/ti/p/~rany30199" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-2 bg-gradient-to-r from-amber-600 to-amber-400 text-black px-8 py-4 rounded-full font-bold hover:opacity-90 transition">
                     <i data-lucide="message-circle"></i> LINE: rany30199
-                </a>
-                <a href="https://www.facebook.com/wu.yu.jie.30199/" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-2 bg-gray-800 border border-gray-700 text-white px-8 py-4 rounded-full font-bold hover:border-amber-500 transition">
-                    <i data-lucide="facebook"></i> Facebook
                 </a>
             </div>
             
-            <!-- 🟢 YouTube 音樂播放器區塊 (精簡版) -->
-            <div class="mt-8 max-w-xs mx-auto bg-gray-900 p-3 rounded-2xl border border-gray-800 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
-                <h3 class="text-amber-500 font-bold mb-3 text-xs flex items-center justify-center gap-2 tracking-wide">
+            <div class="mt-8 max-w-xs mx-auto bg-gray-900 p-3 rounded-2xl border border-gray-800">
+                <h3 class="text-amber-500 font-bold mb-3 text-xs flex items-center justify-center gap-2">
                     <i data-lucide="music" class="w-4 h-4"></i> 華語流行音樂排行榜
                 </h3>
                 <div class="relative w-full overflow-hidden rounded-xl" style="padding-top: 56.25%;">
-                    <!-- 🟢 改用熱門華語大合集，確保穩定播放 -->
-                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/jfKfPfyJRdk" title="YouTube 音樂播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/jfKfPfyJRdk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <p class="text-[9px] text-gray-600 mt-2 flex items-center justify-center gap-1">
-                    <i data-lucide="info" class="w-3 h-3"></i> 點擊播放，邊聽歌邊看屋
-                </p>
             </div>
 
-            <!-- 🟢 瀏覽人數計數器區塊 (精簡版) -->
-            <div class="mt-8 flex flex-col items-center justify-center border-t border-gray-800 pt-6 pb-2">
-                <span class="text-gray-500 text-[10px] mb-2 tracking-widest flex items-center justify-center gap-2 uppercase">
-                    Visitors Count
-                </span>
+            <div class="mt-8 flex flex-col items-center border-t border-gray-800 pt-6">
+                <span class="text-gray-500 text-[10px] mb-2 tracking-widest uppercase">Visitors Count</span>
                 <div class="bg-gray-900 border border-gray-800 px-4 py-1.5 rounded-lg shadow-inner">
                     <span id="visitor-counter" class="neon-rainbow text-lg md:text-xl">000,000</span>
                 </div>
@@ -174,9 +162,9 @@
                 title: "湖口楊湖天下 朝南大透天", 
                 price: "售 1,468 萬",              
                 info: "1～4樓 ｜ 建坪 75 坪 ｜ 前院雙平車", 
-                desc: "稀有帝王朝南座向，二樓整層大主臥，頂樓升級太陽能板與氣密窗！免繳管理費，近湖口車站與商圈，機能滿分。", 
+                desc: "帝王朝南座向，二樓整層大主臥，頂樓升級太陽能板與氣密窗！近湖口車站與商圈。", 
                 link: "https://www.facebook.com/share/p/1BgZ3Uno4m/", 
-                btnText: "前往臉書看詳細照片"
+                btnText: "查看詳細照片"
             },
             {
                 type: "house", 
@@ -185,20 +173,20 @@
                 title: "竹北遠雄六家匯 22樓景觀戶", 
                 price: "售 3,998 萬",              
                 info: "3房(可改4房) ｜ 主建 30.6 坪 ｜ 雙陽台", 
-                desc: "東興國中/國小雙星學區！全齡化社區附室內泳池。屋主誠意大降300萬，高鐵商圈換屋首選。", 
+                desc: "東興雙星學區！全齡化社區附泳池。屋主誠意大降300萬，高鐵商圈首選。", 
                 link: "https://www.facebook.com/share/p/1CWGhrC1dA/", 
-                btnText: "前往臉書看詳細照片"
+                btnText: "查看詳細照片"
             },
             {
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/621513604_122239902836248980_6788928136878337009_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=0fdPWg3dYjAQ7kNvwGGgw0m&_nc_oc=AdpcbbAIdyPBEmU77n1zH2c2IVmO8IFr-hFmnbvKZAnQkortBJPwVenaoHTL-UEctYI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=vJiQcgWNpW5lmlzbJmQEHQ&_nc_ss=7a3a8&oh=00_Af3G5XmMQYNRWxAcnyYgSc7BOCW8BYuSWU_Y0_pQ5EABlw&oe=69DD089C", 
                 tag: "小換大首選", 
                 title: "竹北富源藝術家2 採光四房", 
-                price: "電洽",              
-                info: "4房 ｜ 總建 70.39 坪 ｜ 坡道平面車位", 
-                desc: "正東興學區！格局方正動線佳，獨立玄關設計。坐西南朝東北，冬暖夏涼。鄰近主要幹道與成熟商圈，換屋族必看。", 
+                price: "售 3,180 萬", // 🟢 價格已更正             
+                info: "4房 ｜ 總建 70.39 坪 ｜ 平面雙車位", 
+                desc: "正東興學區！格局方正冬暖夏涼。鄰近主要幹道與成熟商圈，換屋族首選。", 
                 link: "https://www.facebook.com/share/p/18JKvJ54LW/", 
-                btnText: "前往臉書看詳細照片"
+                btnText: "查看詳細照片"
             },
             {
                 type: "house", 
@@ -207,9 +195,21 @@
                 title: "竹北空軍一村三區 一樓免爬梯", 
                 price: "售 1,850 萬",              
                 info: "一樓 ｜ 主建+陽台近36坪 ｜ 平面車位", 
-                desc: "長輩最愛一樓免爬梯！室內大空間三代同堂不擁擠，附專屬平面車位與獨立玄關設計。屋主真心想賣，大樓價享受一樓便利！", 
+                desc: "長輩最愛免爬梯！室內大空間三代同堂，大樓價享受一樓便利與平面車位。", 
                 link: "https://www.facebook.com/share/p/1EupzdC3Qc/", 
-                btnText: "前往臉書看詳細照片"
+                btnText: "查看詳細照片"
+            },
+            // 💡 案子 5：最新新增的「東區孟竹國宅」金雞母
+            {
+                type: "house", 
+                img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/668973615_122250441776248980_3072155775547171953_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=e06c5d&_nc_ohc=6msSIeR4M4wQ7kNvwH_cUgk&_nc_oc=AdrmgGfOggSz-xrlTCnAMOfUpyD87FG2n3EQefJr78V5NFvxvOKSpEUEB87YlKQPbME&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=ba1mrrTUKivE5mo0Q3zbIQ&_nc_ss=7a3a8&oh=00_Af0jENRzvlEGXmVq-297p4xBR5XPNI8rPOk7RhA7Tx-EuQ&oe=69DEAE34", 
+                tag: "高投報首選", 
+                title: "新竹東區 孟竹國宅金雞母", 
+                price: "售 1,298 萬",              
+                info: "5房(滿租中) ｜ 投報 2% UP ｜ 具都更潛力", 
+                desc: "鄰近清交大、竹科！收租無縫接軌。抗通膨最佳現金流資產，都更討論熱度高，進可攻退可守。", 
+                link: "https://www.facebook.com/share/p/1HSDjpCBvS/", 
+                btnText: "查看詳細照片"
             }
         ];
 
@@ -221,40 +221,26 @@
                 const tagHtml = obj.tag ? `<div class="absolute top-4 left-4 bg-amber-500 text-black text-xs font-bold px-3 py-1 rounded z-10">${obj.tag}</div>` : '';
                 const imageHtml = obj.img 
                     ? `<img src="${obj.img}" alt="${obj.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">`
-                    : `<i data-lucide="${icon}" class="w-20 h-20 text-gray-700 group-hover:text-amber-500/50 transition duration-500 group-hover:scale-110"></i>`;
-                const btnHtml = obj.link 
-                    ? `<a href="${obj.link}" target="_blank" rel="noopener noreferrer" class="w-full py-2 bg-gray-700 hover:bg-amber-500 hover:text-black text-white rounded-lg transition font-medium mt-auto text-center block">${obj.btnText}</a>`
-                    : `<button class="w-full py-2 bg-gray-700 hover:bg-amber-500 hover:text-black text-white rounded-lg transition font-medium mt-auto">${obj.btnText}</button>`;
+                    : `<i data-lucide="${icon}" class="w-20 h-20 text-gray-700"></i>`;
+                const btnHtml = `<a href="${obj.link}" target="_blank" class="w-full py-2 bg-gray-700 hover:bg-amber-500 hover:text-black text-white rounded-lg transition font-medium mt-auto text-center block">${obj.btnText}</a>`;
                 
                 container.innerHTML += `
-                <div class="bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:shadow-[0_10px_30px_rgba(245,158,11,0.1)] hover:border-amber-500/50 transition duration-300 group flex flex-col">
-                    <div class="h-56 bg-black flex items-center justify-center relative overflow-hidden">
-                        ${imageHtml}
-                        ${tagHtml}
-                    </div>
+                <div class="bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-amber-500/50 transition duration-300 flex flex-col group">
+                    <div class="h-56 bg-black flex items-center justify-center relative overflow-hidden">${imageHtml}${tagHtml}</div>
                     <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-bold text-xl text-white">${obj.title}</h3>
-                            <span class="text-amber-500 font-bold whitespace-nowrap ml-4">${obj.price}</span>
-                        </div>
-                        <p class="text-gray-400 mb-4 text-sm">${obj.info}</p>
-                        <p class="text-gray-500 mb-6 line-clamp-2 flex-grow">${obj.desc}</p>
-                        ${btnHtml}
+                        <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-lg text-white">${obj.title}</h3><span class="text-amber-500 font-bold whitespace-nowrap ml-4">${obj.price}</span></div>
+                        <p class="text-gray-400 mb-4 text-xs">${obj.info}</p>
+                        <p class="text-gray-500 mb-6 text-sm line-clamp-2 flex-grow">${obj.desc}</p>${btnHtml}
                     </div>
-                </div>
-                `;
+                </div>`;
             });
         }
         
         function updateVisitorCounter() {
             const baseDate = new Date('2024-01-01').getTime();
             const now = Date.now();
-            const timeBasedCount = Math.floor((now - baseDate) / 25000); 
-            const baseCount = 88888; 
-            let localVisits = parseInt(localStorage.getItem('my_visits') || '0');
-            localVisits++;
-            localStorage.setItem('my_visits', localVisits);
-            const totalVisitors = baseCount + timeBasedCount + localVisits;
+            const totalVisitors = 88888 + Math.floor((now - baseDate) / 25000) + parseInt(localStorage.getItem('my_visits') || '0');
+            localStorage.setItem('my_visits', (parseInt(localStorage.getItem('my_visits') || '0') + 1).toString());
             document.getElementById('visitor-counter').innerText = totalVisitors.toLocaleString();
         }
         updateVisitorCounter();
