@@ -11,6 +11,27 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         
+        /* 🟢 首頁背景圖特效：確保背景透明不遮字 */
+        #home {
+            position: relative;
+            overflow: hidden;
+        }
+        #home::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            /* 🟢 已經為您設定好您剛傳送的專屬背景照！ */
+            background-image: url('https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/494734490_122197485608248980_6869680787341785767_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=b895b5&_nc_ohc=ZglCW78XIoQQ7kNvwFx05mO&_nc_oc=Adp4lGKWHDlhARna82fs1lSWIsNMpg8D4wIs8nuFKlz5vHdoDHn7ER_SkbidGHynZzQ&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=HuQX2b0oMnZ4boQyA6TQWA&_nc_ss=7a3a8&oh=00_Af3at3EX2VP-cmlLMP8OBmo6bZNkKNhUQR8e7GmjZoiXMA&oe=69DEBDCD');
+            background-size: cover;
+            background-position: right center; /* 🟢 調整對齊右邊，確保冠軍紅字完整出現 */
+            opacity: 0.25; /* 透明度 0.25，保留質感又不會蓋過文字 */
+            z-index: 0;
+        }
+        #home > div {
+            position: relative;
+            z-index: 10;
+        }
+
         @keyframes neon-rainbow-anim {
             0% { color: #ff3b3b; text-shadow: 0 0 5px #ff3b3b, 0 0 10px #ff3b3b, 0 0 20px #ff3b3b; }
             16% { color: #ff9100; text-shadow: 0 0 5px #ff9100, 0 0 10px #ff9100, 0 0 20px #ff9100; }
@@ -46,9 +67,22 @@
         </div>
     </nav>
 
+    <!-- 首頁區塊：已加入背景圖片層 -->
     <section id="home" class="pt-32 pb-20 px-4 min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-black">
-        <div class="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
-            <div class="md:w-1/2 text-center md:text-left">
+        <!-- 🟢 將 flex 排序改為正常排序，大頭照放前(左)、文字放後(右) -->
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+            
+            <!-- 🟢 大頭貼移到左邊，讓出右邊的空間給冠軍字樣 -->
+            <div class="md:w-5/12 flex justify-center mb-8 md:mb-0">
+                <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-tr from-gray-800 to-gray-700 rounded-full flex items-center justify-center border-4 border-amber-500 shadow-[0_0_40px_rgba(245,158,11,0.15)] relative">
+                    <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/572051034_122227760876248980_239160365600808975_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=kIU7WgUmOCwQ7kNvwEpxzsk&_nc_oc=AdpPXQ7MF-FMBd6InqRZAhPP3nTJaBh1H70Ey787Dch67KEjZCb1GdpHfrub18nHv48&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=jwedxEj08fgzZAFri6EtA&_nc_ss=7a3a8&oh=00_Af1LoTugBSZCayWkJiNj5LIGJxx5grn0FBdmMG8rlrUx0A&oe=69DBCC95" alt="寶爸小吳" class="w-full h-full object-cover rounded-full">
+                    <div class="absolute top-8 right-8 w-4 h-4 bg-amber-300 rounded-full shadow-[0_0_10px_rgba(252,211,77,0.8)]"></div>
+                    <div class="absolute bottom-12 left-4 w-6 h-6 bg-amber-500 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.8)]"></div>
+                </div>
+            </div>
+
+            <!-- 🟢 文字區移到右邊 (因為文字間有空隙，可以透出背景的冠軍字樣) -->
+            <div class="md:w-7/12 text-center md:text-left">
                 <h2 class="text-amber-500 font-semibold tracking-widest uppercase mb-3 text-sm border-l-2 border-amber-500 pl-3 ml-auto mr-auto md:ml-0 inline-block md:block">Top Agent Services</h2>
                 <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
                     您好！我是 <span class="text-amber-500">房仲特務寶爸小吳</span><br>
@@ -66,13 +100,7 @@
                     </a>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-tr from-gray-800 to-gray-700 rounded-full flex items-center justify-center border-4 border-amber-500 shadow-[0_0_40px_rgba(245,158,11,0.15)] relative">
-                    <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/572051034_122227760876248980_239160365600808975_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=kIU7WgUmOCwQ7kNvwEpxzsk&_nc_oc=AdpPXQ7MF-FMBd6InqRZAhPP3nTJaBh1H70Ey787Dch67KEjZCb1GdpHfrub18nHv48&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=jwedxEj08fgzZAFMri6EtA&_nc_ss=7a3a8&oh=00_Af1LoTugBSZCayWkJiNj5LIGJxx5grn0FBdmMG8rlrUx0A&oe=69DBCC95" alt="寶爸小吳" class="w-full h-full object-cover rounded-full">
-                    <div class="absolute top-8 right-8 w-4 h-4 bg-amber-300 rounded-full shadow-[0_0_10px_rgba(252,211,77,0.8)]"></div>
-                    <div class="absolute bottom-12 left-4 w-6 h-6 bg-amber-500 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.8)]"></div>
-                </div>
-            </div>
+            
         </div>
     </section>
 
@@ -182,7 +210,7 @@
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/621513604_122239902836248980_6788928136878337009_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=0fdPWg3dYjAQ7kNvwGGgw0m&_nc_oc=AdpcbbAIdyPBEmU77n1zH2c2IVmO8IFr-hFmnbvKZAnQkortBJPwVenaoHTL-UEctYI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=vJiQcgWNpW5lmlzbJmQEHQ&_nc_ss=7a3a8&oh=00_Af3G5XmMQYNRWxAcnyYgSc7BOCW8BYuSWU_Y0_pQ5EABlw&oe=69DD089C", 
                 tag: "小換大首選", 
                 title: "竹北富源藝術家2 採光四房", 
-                price: "售 3,180 萬", // 🟢 價格已更正             
+                price: "售 3,180 萬",             
                 info: "4房 ｜ 總建 70.39 坪 ｜ 平面雙車位", 
                 desc: "正東興學區！格局方正冬暖夏涼。鄰近主要幹道與成熟商圈，換屋族首選。", 
                 link: "https://www.facebook.com/share/p/18JKvJ54LW/", 
@@ -199,7 +227,6 @@
                 link: "https://www.facebook.com/share/p/1EupzdC3Qc/", 
                 btnText: "查看詳細照片"
             },
-            // 💡 案子 5：最新新增的「東區孟竹國宅」金雞母
             {
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/668973615_122250441776248980_3072155775547171953_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=e06c5d&_nc_ohc=6msSIeR4M4wQ7kNvwH_cUgk&_nc_oc=AdrmgGfOggSz-xrlTCnAMOfUpyD87FG2n3EQefJr78V5NFvxvOKSpEUEB87YlKQPbME&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=ba1mrrTUKivE5mo0Q3zbIQ&_nc_ss=7a3a8&oh=00_Af0jENRzvlEGXmVq-297p4xBR5XPNI8rPOk7RhA7Tx-EuQ&oe=69DEAE34", 
