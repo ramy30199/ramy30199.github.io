@@ -22,8 +22,8 @@
             top: 0; left: 0; right: 0; bottom: 0;
             background-image: url('https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/494734490_122197485608248980_6869680787341785767_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=b895b5&_nc_ohc=ZglCW78XIoQQ7kNvwFx05mO&_nc_oc=Adp4lGKWHDlhARna82fs1lSWIsNMpg8D4wIs8nuFKlz5vHdoDHn7ER_SkbidGHynZzQ&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=HuQX2b0oMnZ4boQyA6TQWA&_nc_ss=7a3a8&oh=00_Af3at3EX2VP-cmlLMP8OBmo6bZNkKNhUQR8e7GmjZoiXMA&oe=69DEBDCD');
             background-size: cover;
-            background-position: right center; /* 調整對齊右邊，確保冠軍紅字完整出現 */
-            opacity: 0.25; /* 透明度 0.25，保留質感又不會蓋過文字 */
+            background-position: right center;
+            opacity: 0.25;
             z-index: 0;
         }
         #home > div {
@@ -50,10 +50,6 @@
 </head>
 <body class="bg-gray-900 text-gray-200 antialiased">
 
-    <!-- 🟢 加入 Facebook 留言板的必備 SDK 程式碼 -->
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v19.0" nonce="房仲特務留言板"></script>
-
     <nav class="fixed w-full bg-black/90 backdrop-blur-md border-b border-gray-800 z-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -64,7 +60,7 @@
                     <a href="#home" class="text-gray-300 hover:text-amber-500 transition font-medium">首頁</a>
                     <a href="#services" class="text-gray-300 hover:text-amber-500 transition font-medium">專業服務</a>
                     <a href="#objects" class="text-gray-300 hover:text-amber-500 transition font-medium">精選物件</a>
-                    <a href="#comments-section" class="text-gray-300 hover:text-amber-500 transition font-medium">留言板</a>
+                    <a href="#comments-section" class="text-gray-300 hover:text-amber-500 transition font-medium">專屬留言</a>
                     <a href="#contact" class="text-gray-300 hover:text-amber-500 transition font-medium">聯絡我</a>
                 </div>
             </div>
@@ -95,8 +91,8 @@
                     為您提供最專業的全方位資產與風險管理服務。無論是為家人尋找理想的避風港、挑選夢想愛車，或是規劃完善的產險保障，我都將以特務般的精準與寶爸般的細心為您達成任務。
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#contact" class="bg-gradient-to-r from-amber-600 to-amber-400 text-black px-8 py-3 rounded-full font-bold shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] transition flex justify-center items-center gap-2">
-                        <i data-lucide="phone-call" class="w-5 h-5"></i> 立即諮詢
+                    <a href="#comments-section" class="bg-gradient-to-r from-amber-600 to-amber-400 text-black px-8 py-3 rounded-full font-bold shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] transition flex justify-center items-center gap-2">
+                        <i data-lucide="message-square" class="w-5 h-5"></i> 立即留言
                     </a>
                     <a href="#objects" class="bg-transparent text-amber-500 border-2 border-amber-500 px-8 py-3 rounded-full font-medium hover:bg-amber-500/10 transition flex justify-center items-center gap-2">
                         <i data-lucide="search" class="w-5 h-5"></i> 尋找物件
@@ -147,18 +143,38 @@
         </div>
     </section>
 
-    <!-- 🟢 訪客留言板區塊 -->
+    <!-- 🟢 升級版：專屬私訊留言板塊 -->
     <section id="comments-section" class="py-20 bg-black px-4 border-t border-gray-800">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-center mb-6 text-white flex items-center justify-center gap-3">
-                <i data-lucide="message-square" class="w-8 h-8 text-amber-500"></i> 訪客留言板
+                <i data-lucide="message-square" class="w-8 h-8 text-amber-500"></i> 專屬私訊留言
             </h2>
-            <p class="text-center text-gray-400 mb-10 text-lg">歡迎留下您的找屋需求、賣屋疑問，或是給寶爸小吳的鼓勵！</p>
+            <p class="text-center text-gray-400 mb-10 text-lg">買房賣房涉及個人隱私，為保障您的資訊安全，請直接點擊下方按鈕進行一對一私訊留言！</p>
             
-            <div class="bg-gray-900 p-4 md:p-8 rounded-2xl border border-gray-700 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                <!-- Facebook 留言板外掛 -->
-                <!-- 注意：data-colorscheme="dark" 確保留言板是深色模式，符合網站風格 -->
-                <div class="fb-comments" data-href="https://ramy30199.github.io/" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- LINE 留言選項 -->
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-[#06C755] transition duration-300 text-center flex flex-col items-center justify-center group">
+                    <div class="w-16 h-16 bg-[#06C755]/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i data-lucide="message-circle" class="w-8 h-8 text-[#06C755]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">LINE 線上留言</h3>
+                    <p class="text-gray-400 mb-6 text-sm">回覆最快速！有問題直接留言，寶爸小吳隨時為您解答，全程保密。</p>
+                    <a href="https://line.me/ti/p/~rany30199" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-[#06C755] hover:bg-[#05a346] text-white rounded-full font-bold transition shadow-lg flex justify-center items-center gap-2">
+                        點此加 LINE 留言
+                    </a>
+                </div>
+
+                <!-- 直接撥打選項 -->
+                <div class="bg-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-amber-500 transition duration-300 text-center flex flex-col items-center justify-center group">
+                    <div class="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i data-lucide="phone-call" class="w-8 h-8 text-amber-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">專線語音留言</h3>
+                    <p class="text-gray-400 mb-6 text-sm">不方便打字嗎？直接撥打專線，若逢帶看忙線中，歡迎直接語音留言。</p>
+                    <a href="tel:0977754373" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-black rounded-full font-bold transition shadow-lg flex justify-center items-center gap-2">
+                        撥打 0977-754-373
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -167,14 +183,6 @@
         <div class="max-w-3xl mx-auto">
             <h2 class="text-3xl font-bold mb-6 text-white">啟動您的專屬特務任務</h2>
             <p class="text-gray-400 mb-8 text-lg">買房、買車、買保障，交給寶爸小吳一次為您搞定！</p>
-            <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-12">
-                <a href="tel:0977754373" class="inline-flex justify-center items-center gap-2 bg-gray-800 border border-gray-700 text-white px-8 py-4 rounded-full font-bold hover:border-amber-500 transition">
-                    <i data-lucide="smartphone"></i> 0977-754-373
-                </a>
-                <a href="https://line.me/ti/p/~rany30199" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-2 bg-gradient-to-r from-amber-600 to-amber-400 text-black px-8 py-4 rounded-full font-bold hover:opacity-90 transition">
-                    <i data-lucide="message-circle"></i> LINE: rany30199
-                </a>
-            </div>
             
             <div class="mt-8 max-w-xs mx-auto bg-black p-3 rounded-2xl border border-gray-800">
                 <h3 class="text-amber-500 font-bold mb-3 text-xs flex items-center justify-center gap-2">
