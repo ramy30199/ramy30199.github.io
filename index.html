@@ -50,6 +50,10 @@
 </head>
 <body class="bg-gray-900 text-gray-200 antialiased">
 
+    <!-- 🟢 加入 Facebook 留言板的必備 SDK 程式碼 -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v19.0" nonce="房仲特務留言板"></script>
+
     <nav class="fixed w-full bg-black/90 backdrop-blur-md border-b border-gray-800 z-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -60,6 +64,7 @@
                     <a href="#home" class="text-gray-300 hover:text-amber-500 transition font-medium">首頁</a>
                     <a href="#services" class="text-gray-300 hover:text-amber-500 transition font-medium">專業服務</a>
                     <a href="#objects" class="text-gray-300 hover:text-amber-500 transition font-medium">精選物件</a>
+                    <a href="#comments-section" class="text-gray-300 hover:text-amber-500 transition font-medium">留言板</a>
                     <a href="#contact" class="text-gray-300 hover:text-amber-500 transition font-medium">聯絡我</a>
                 </div>
             </div>
@@ -142,7 +147,23 @@
         </div>
     </section>
 
-    <footer id="contact" class="bg-black text-white py-16 px-4 text-center border-t border-gray-800">
+    <!-- 🟢 訪客留言板區塊 -->
+    <section id="comments-section" class="py-20 bg-black px-4 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-6 text-white flex items-center justify-center gap-3">
+                <i data-lucide="message-square" class="w-8 h-8 text-amber-500"></i> 訪客留言板
+            </h2>
+            <p class="text-center text-gray-400 mb-10 text-lg">歡迎留下您的找屋需求、賣屋疑問，或是給寶爸小吳的鼓勵！</p>
+            
+            <div class="bg-gray-900 p-4 md:p-8 rounded-2xl border border-gray-700 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                <!-- Facebook 留言板外掛 -->
+                <!-- 注意：data-colorscheme="dark" 確保留言板是深色模式，符合網站風格 -->
+                <div class="fb-comments" data-href="https://ramy30199.github.io/" data-width="100%" data-numposts="5" data-colorscheme="dark"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-gray-900 text-white py-16 px-4 text-center border-t border-gray-800">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-3xl font-bold mb-6 text-white">啟動您的專屬特務任務</h2>
             <p class="text-gray-400 mb-8 text-lg">買房、買車、買保障，交給寶爸小吳一次為您搞定！</p>
@@ -155,7 +176,7 @@
                 </a>
             </div>
             
-            <div class="mt-8 max-w-xs mx-auto bg-gray-900 p-3 rounded-2xl border border-gray-800">
+            <div class="mt-8 max-w-xs mx-auto bg-black p-3 rounded-2xl border border-gray-800">
                 <h3 class="text-amber-500 font-bold mb-3 text-xs flex items-center justify-center gap-2">
                     <i data-lucide="music" class="w-4 h-4"></i> 華語流行音樂排行榜
                 </h3>
@@ -166,7 +187,7 @@
 
             <div class="mt-8 flex flex-col items-center border-t border-gray-800 pt-6">
                 <span class="text-gray-500 text-[10px] mb-2 tracking-widest uppercase">Visitors Count</span>
-                <div class="bg-gray-900 border border-gray-800 px-4 py-1.5 rounded-lg shadow-inner">
+                <div class="bg-black border border-gray-800 px-4 py-1.5 rounded-lg shadow-inner">
                     <span id="visitor-counter" class="neon-rainbow text-lg md:text-xl">000,000</span>
                 </div>
             </div>
@@ -236,7 +257,6 @@
                 link: "https://www.facebook.com/share/p/1HSDjpCBvS/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 案子 6：最新新增的「新豐綠景莊園透天」
             {
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/613651790_122237820962248980_4359713616922308435_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_ohc=yTjbWI6EITYQ7kNvwHTq4T3&_nc_oc=AdqiezLbHQBDfdy0Yv4WSga6896IEMT6najOIFJubxMSaSSagVqz9y3wi5PrVsQwDv4&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=VQ9lmTJEZeCSdlBSU15f4Q&_nc_ss=7a3a8&oh=00_Af3Ot4g23DI6_BmakDJOZ8G9k6UFgAd-VfTE_eUd5b-l4A&oe=69DF628B", 
@@ -248,7 +268,6 @@
                 link: "https://www.facebook.com/share/p/17vbRcoKsy/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 案子 7：最新新增的「鴻築竹科滙」
             {
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/597651481_122233793096248980_394560096749409315_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=jXDCtPr68EIQ7kNvwHs2gvk&_nc_oc=AdoZPHY65c-2D6aH92LuaUg8FlSO4eiWbZuYTr96DUDXYB0yg_8qQbukK9k9_tbMN_A&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=_O1XJWulUXTy1dHjpUjWhA&_nc_ss=7a3a8&oh=00_Af1XG1PAigIb_vsncTySfaCNFvesEwgXSlUKXzCQAr44bw&oe=69DF8779", 
@@ -260,7 +279,6 @@
                 link: "https://www.facebook.com/share/p/1CsVAMUndG/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 案子 8：最新新增的「群新有為全新別墅」
             {
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/587759821_122231203142248980_426361899283662679_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=13d280&_nc_ohc=zIDK8deekyAQ7kNvwEjmXFJ&_nc_oc=Adq1fbu3X7jbjaMAUnhABd02mD4N-Dmt2SWDUiDjzgBPCWon4jnHjre4oUcDHCCt0oI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=8788yOFUULsK8FXS81HrKQ&_nc_ss=7a3a8&oh=00_Af3qRnZrkooGa5nmPXM8p7DyQxwUWNmN_cCMon9xPtu8sQ&oe=69DF5D52", 
@@ -272,7 +290,6 @@
                 link: "https://www.facebook.com/share/p/188HnYz4tF/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 案子 9：最新新增的「三上家天下」
             {
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/585854446_122230525124248980_1001044804096618118_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=urgpWaxlpGMQ7kNvwGZKqdP&_nc_oc=AdrqSehiKtHfS5jGDFkhK0h9Mo1UGV1gBCbpVlzUwuRKS0VOwHSLfAhqtasRHw-r0xQ&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=9xMMHM03dwftp5-EnfO4JA&_nc_ss=7a3a8&oh=00_Af1I9KWnRt28VHUrq_k4cCpaHS-SheOV8iYspvZo6FLAzg&oe=69DF7E55", 
