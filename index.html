@@ -20,7 +20,6 @@
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            /* 🟢 校正回 m 的網址 */
             background-image: url('https://ramy30199.github.io/bg-champion.jpg');
             background-size: cover;
             background-position: right center; 
@@ -32,6 +31,7 @@
             z-index: 10;
         }
 
+        /* 彩虹霓虹燈特效 */
         @keyframes neon-rainbow-anim {
             0% { color: #ff3b3b; text-shadow: 0 0 5px #ff3b3b, 0 0 10px #ff3b3b, 0 0 20px #ff3b3b; }
             16% { color: #ff9100; text-shadow: 0 0 5px #ff9100, 0 0 10px #ff9100, 0 0 20px #ff9100; }
@@ -47,9 +47,41 @@
             font-weight: 900;
             letter-spacing: 4px;
         }
+
+        /* 🟢 頁面滾動淡入特效 (Scroll Reveal) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 🟢 篩選物件時的淡入特效 */
+        @keyframes fadeInItem {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeInItem 0.5s ease-out forwards;
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-200 antialiased">
+<body class="bg-gray-900 text-gray-200 antialiased relative">
+
+    <!-- 🟢 懸浮聯絡按鈕 -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+        <a href="https://line.me/ti/p/~rany30199" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-[#06C755] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(6,199,85,0.4)] hover:scale-110 hover:shadow-[0_0_25px_rgba(6,199,85,0.7)] transition duration-300 group relative">
+            <i data-lucide="message-circle" class="text-white w-7 h-7"></i>
+            <span class="absolute right-full mr-4 bg-black/80 text-white text-sm px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none font-bold border border-gray-700">LINE 線上諮詢</span>
+        </a>
+        <a href="tel:0977754373" class="w-14 h-14 bg-amber-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:scale-110 hover:shadow-[0_0_25px_rgba(245,158,11,0.7)] transition duration-300 group relative">
+            <i data-lucide="phone-call" class="text-black w-7 h-7"></i>
+            <span class="absolute right-full mr-4 bg-black/80 text-white text-sm px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap pointer-events-none font-bold border border-gray-700">撥打專線</span>
+        </a>
+    </div>
 
     <nav class="fixed w-full bg-black/90 backdrop-blur-md border-b border-gray-800 z-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,12 +102,11 @@
 
     <!-- 首頁區塊 -->
     <section id="home" class="pt-32 pb-20 px-4 min-h-screen flex items-center bg-gradient-to-b from-gray-900 to-black">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 reveal active">
             
             <!-- 大頭貼 -->
             <div class="md:w-5/12 flex justify-center mb-8 md:mb-0">
                 <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-tr from-gray-800 to-gray-700 rounded-full flex items-center justify-center border-4 border-amber-500 shadow-[0_0_40px_rgba(245,158,11,0.15)] relative">
-                    <!-- 🟢 校正回 m 的網址 -->
                     <img src="https://ramy30199.github.io/profile.jpg" alt="寶爸小吳" onerror="this.src='https://ui-avatars.com/api/?name=吳&background=f59e0b&color=fff&size=256'" class="w-full h-full object-cover rounded-full">
                     <div class="absolute top-8 right-8 w-4 h-4 bg-amber-300 rounded-full shadow-[0_0_10px_rgba(252,211,77,0.8)]"></div>
                     <div class="absolute bottom-12 left-4 w-6 h-6 bg-amber-500 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.8)]"></div>
@@ -107,7 +138,7 @@
 
     <!-- 服務區塊 -->
     <section id="services" class="py-20 bg-black px-4 border-t border-gray-800">
-        <div class="max-w-5xl mx-auto text-center">
+        <div class="max-w-5xl mx-auto text-center reveal">
             <h2 class="text-3xl font-bold mb-12 text-white">
                 <span class="text-amber-500">///</span> 跨領域專業服務 <span class="text-amber-500">///</span>
             </h2>
@@ -139,8 +170,18 @@
 
     <!-- 精選物件區塊 -->
     <section id="objects" class="py-20 bg-gray-900 px-4">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 text-white">精選推薦<span class="text-amber-500">物件</span></h2>
+        <div class="max-w-5xl mx-auto reveal">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">精選推薦<span class="text-amber-500">物件</span></h2>
+            
+            <!-- 🟢 物件篩選器 (Filter Buttons) -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="filterObjects('all')" class="filter-btn active bg-amber-500 text-black px-5 py-2 rounded-full font-bold transition shadow-[0_0_15px_rgba(245,158,11,0.4)]">全部物件</button>
+                <button onclick="filterObjects('building')" class="filter-btn bg-gray-800 text-gray-300 border border-gray-700 hover:border-amber-500 hover:text-amber-500 px-5 py-2 rounded-full font-bold transition">大樓/華廈</button>
+                <button onclick="filterObjects('villa')" class="filter-btn bg-gray-800 text-gray-300 border border-gray-700 hover:border-amber-500 hover:text-amber-500 px-5 py-2 rounded-full font-bold transition">透天/別墅</button>
+                <button onclick="filterObjects('investment')" class="filter-btn bg-gray-800 text-gray-300 border border-gray-700 hover:border-amber-500 hover:text-amber-500 px-5 py-2 rounded-full font-bold transition">黃金店面/收租</button>
+                <button onclick="filterObjects('suite')" class="filter-btn bg-gray-800 text-gray-300 border border-gray-700 hover:border-amber-500 hover:text-amber-500 px-5 py-2 rounded-full font-bold transition">精選套房</button>
+            </div>
+
             <div id="objects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 動態物件產生 -->
             </div>
@@ -149,7 +190,7 @@
 
     <!-- 專屬私訊留言板塊 -->
     <section id="comments-section" class="py-20 bg-black px-4 border-t border-gray-800">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-4xl mx-auto reveal">
             <h2 class="text-3xl font-bold text-center mb-6 text-white flex items-center justify-center gap-3">
                 <i data-lucide="message-square" class="w-8 h-8 text-amber-500"></i> 專屬私訊留言
             </h2>
@@ -185,7 +226,7 @@
 
     <!-- 頁尾區塊 -->
     <footer id="contact" class="bg-gray-900 text-white py-16 px-4 text-center border-t border-gray-800">
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-3xl mx-auto reveal">
             <h2 class="text-3xl font-bold mb-6 text-white">啟動您的專屬特務任務</h2>
             <p class="text-gray-400 mb-8 text-lg">買房、買車、買保障，交給寶爸小吳一次為您搞定！</p>
             
@@ -214,8 +255,10 @@
     </footer>
 
     <script>
+        // 🟢 替每個物件加上 category (分類標籤) 以支援篩選功能
         const myObjects = [
             {
+                category: "villa",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/659684677_122249583896248980_2770425257039636179_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_ohc=FMoQkcZPhKUQ7kNvwECkinl&_nc_oc=AdqG9qaZvag4HkH8aC3z2LrItH72894l02BhSWyzBG0f1Bjqa0T0g2RQtIoDaJA9vQI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=KcPF5w8Mi-3Z28BaydeNAg&_nc_ss=7a3a8&oh=00_Af0dSqRBERa2oSBXKnlrNsAjZdbJR5od_akzK0S_e_5GUg&oe=69DC01FE", 
                 tag: "超強 CP 值", 
@@ -227,6 +270,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "building",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/659799020_122249456276248980_55330295829858887_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=fWP0TZ9oCRwQ7kNvwHDTC9I&_nc_oc=AdrmO1Yr941NOukuKUNJDpV9h7dFAWgWau3oIlJKw0UE3YOVhdwIlGux36nu82McnmI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=uyoNE_-gHR1irNkSdR133w&_nc_ss=7a3a8&oh=00_Af2MCKGJKXYhspJGW0EjizmXSmwSj6_jCRd300oSNl_gsg&oe=69DD1567", 
                 tag: "大降 300 萬", 
@@ -238,6 +282,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "building",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/621513604_122239902836248980_6788928136878337009_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=0fdPWg3dYjAQ7kNvwGGgw0m&_nc_oc=AdpcbbAIdyPBEmU77n1zH2c2IVmO8IFr-hFmnbvKZAnQkortBJPwVenaoHTL-UEctYI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=vJiQcgWNpW5lmlzbJmQEHQ&_nc_ss=7a3a8&oh=00_Af3G5XmMQYNRWxAcnyYgSc7BOCW8BYuSWU_Y0_pQ5EABlw&oe=69DD089C", 
                 tag: "小換大首選", 
@@ -249,6 +294,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "building",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/662076950_122249951186248980_352308046078343876_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=e06c5d&_nc_ohc=AWJBoIR2Eo4Q7kNvwG5yFrU&_nc_oc=AdrITf69I5Yd705CT5VyfKJUZJElPACBO8lbMtGubhxnNPbXevWtRx8zgb4nI_IeCwo&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=NbBKiwIuFtUDFFW_02PQag&_nc_ss=7a3a8&oh=00_Af1_w_0jPVsPyP-4TcLrWl1GYR67h17B3vpxO_v9b-1aiA&oe=69DD03C4", 
                 tag: "誠意降價", 
@@ -260,6 +306,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "investment",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/668973615_122250441776248980_3072155775547171953_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=e06c5d&_nc_ohc=6msSIeR4M4wQ7kNvwH_cUgk&_nc_oc=AdrmgGfOggSz-xrlTCnAMOfUpyD87FG2n3EQefJr78V5NFvxvOKSpEUEB87YlKQPbME&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=ba1mrrTUKivE5mo0Q3zbIQ&_nc_ss=7a3a8&oh=00_Af0jENRzvlEGXmVq-297p4xBR5XPNI8rPOk7RhA7Tx-EuQ&oe=69DEAE34", 
                 tag: "高投報首選", 
@@ -271,6 +318,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "villa",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/613651790_122237820962248980_4359713616922308435_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_ohc=yTjbWI6EITYQ7kNvwHTq4T3&_nc_oc=AdqiezLbHQBDfdy0Yv4WSga6896IEMT6najOIFJubxMSaSSagVqz9y3wi5PrVsQwDv4&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=VQ9lmTJEZeCSdlBSU15f4Q&_nc_ss=7a3a8&oh=00_Af3Ot4g23DI6_BmakDJOZ8G9k6UFgAd-VfTE_eUd5b-l4A&oe=69DF628B", 
                 tag: "稀有釋出", 
@@ -282,6 +330,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "building",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/597651481_122233793096248980_394560096749409315_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=jXDCtPr68EIQ7kNvwHs2gvk&_nc_oc=AdoZPHY65c-2D6aH92LuaUg8FlSO4eiWbZuYTr96DUDXYB0yg_8qQbukK9k9_tbMN_A&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=_O1XJWulUXTy1dHjpUjWhA&_nc_ss=7a3a8&oh=00_Af1XG1PAigIb_vsncTySfaCNFvesEwgXSlUKXzCQAr44bw&oe=69DF8779", 
                 tag: "高鐵核心特區", 
@@ -293,6 +342,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "villa",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/587759821_122231203142248980_426361899283662679_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=13d280&_nc_ohc=zIDK8deekyAQ7kNvwEjmXFJ&_nc_oc=Adq1fbu3X7jbjaMAUnhABd02mD4N-Dmt2SWDUiDjzgBPCWon4jnHjre4oUcDHCCt0oI&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=8788yOFUULsK8FXS81HrKQ&_nc_ss=7a3a8&oh=00_Af3qRnZrkooGa5nmPXM8p7DyQxwUWNmN_cCMon9xPtu8sQ&oe=69DF5D52", 
                 tag: "全新未住", 
@@ -304,6 +354,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "building",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/585854446_122230525124248980_1001044804096618118_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=urgpWaxlpGMQ7kNvwGZKqdP&_nc_oc=AdrqSehiKtHfS5jGDFkhK0h9Mo1UGV1gBCbpVlzUwuRKS0VOwHSLfAhqtasRHw-r0xQ&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=9xMMHM03dwftp5-EnfO4JA&_nc_ss=7a3a8&oh=00_Af1I9KWnRt28VHUrq_k4cCpaHS-SheOV8iYspvZo6FLAzg&oe=69DF7E55", 
                 tag: "無敵河岸景", 
@@ -315,6 +366,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "investment",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/517377427_122209653506248980_4839766181923568466_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=BesC0IflgF4Q7kNvwHynItB&_nc_oc=AdrdxpENnC2-6A2G6OBIfIEhF3W2eWOwtKBubI8y7I9Ws40uIMd7Bq2NM96mGlh9qNo&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=ipcKyxB-rIdYHc8VF2xC2Q&_nc_ss=7a3a8&oh=00_Af05m3fTOJF5YikyuCh6DePplPz0mUvU7Bw9JZgNhhLO1w&oe=69DFF62F", 
                 tag: "黃金透天店住", 
@@ -326,6 +378,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "building",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/509299271_122206265030248980_983868573684459946_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=R485mxIHsPQQ7kNvwFOFhmf&_nc_oc=AdrPCTYz4wwhYTJ1RPJyl_b-kncfboh6kuXZNa8sq06Bcvj2sjtDqzSdDOo-O3t1RLw&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=FaY8WcjRZ8uHQGmTSULgAw&_nc_ss=7a3a8&oh=00_Af3JD3h5FxZ0dmb9GOG8JcrFTtu6XAaRXy-rdvT5UytMzg&oe=69E012EE", 
                 tag: "頂級豪宅", 
@@ -337,6 +390,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "villa",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/509327397_122206190990248980_1788252364833029267_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_ohc=IAcuHLx9FN0Q7kNvwEkInIn&_nc_oc=AdppArSDkFo84NbsrOmMUlyUn7uH2l-HK5pVR3ZBLTKJ1XsrlGQ8zt_0fcqnv7d3Bfg&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=0WxOjmjezfVGCpEVptVU2g&_nc_ss=7a3a8&oh=00_Af0k1EArzB28mQyQNGouXum4yA6q7GnR2Z3NshRKE9Hdbw&oe=69E01325", 
                 tag: "成功學區", 
@@ -348,6 +402,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "building",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/506045630_122204935772248980_3660022380995442473_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=13d280&_nc_ohc=q4-vWqb5I5gQ7kNvwHATQca&_nc_oc=AdoOMjJAOYrNJj0vhP4G4nE0Wvlp9EKyEumc0l2nXAUjrh6Qt6lMgMU7vD2RSkO6pJM&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=EpsIUfQbXcgWK6Ij2FKEAg&_nc_ss=7a3a8&oh=00_Af3a6Ogidp5vHbtuh9bAK72yLjgtPrQYmAkFg7Wb51wceQ&oe=69E02187", 
                 tag: "大降 405 萬", 
@@ -359,6 +414,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "villa",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/672346283_122251214066248980_45863542821326077_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_ohc=a3r0MI2pcrMQ7kNvwFFd3qY&_nc_oc=AdqiJtSavHj6xDOB9syJtLFOUO1dgOcNnOUATS8qqgrw98XcrpzYj3v6OZzJz6LWL8U&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=K7m3dhN8Dkd9TNvNOH26BA&_nc_ss=7a3a8&oh=00_Af05YlDMV2SdVW5HmftM9DrFajJZAgE84B_T-bkcFjVbOg&oe=69E3CA81", 
                 tag: "近全新電梯墅", 
@@ -370,6 +426,7 @@
                 btnText: "查看詳細照片"
             },
             {
+                category: "suite",
                 type: "house", 
                 img: "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/671241854_122251220654248980_5329534970633097728_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=Y9BCvq8QFmAQ7kNvwFEEPAg&_nc_oc=AdraKBNNdQgp1lDhe__HvFF2C0HaqNoH5OyGxic43wz0ARccbmlbwmm532wVzpvdEtM&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=FgTPR_tdaPJBcFTPGDlpQA&_nc_ss=7a3a8&oh=00_Af29GI8X65u0VuW9ZAiQ7fxgH06TbQ-3TC7z2y4Und73Ng&oe=69E3FE47", 
                 tag: "專任釋出", 
@@ -382,29 +439,67 @@
             }
         ];
 
-        const container = document.getElementById('objects-container');
-        if (myObjects.length > 0) {
+        // 🟢 渲染與篩選功能
+        function renderObjects(filterType) {
+            const container = document.getElementById('objects-container');
             container.innerHTML = '';
-            myObjects.forEach(obj => {
-                const icon = obj.type === 'house' ? 'building-2' : 'car-front';
-                const tagHtml = obj.tag ? `<div class="absolute top-4 left-4 bg-amber-500 text-black text-xs font-bold px-3 py-1 rounded z-10">${obj.tag}</div>` : '';
-                const imageHtml = obj.img 
-                    ? `<img src="${obj.img}" alt="${obj.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">`
-                    : `<i data-lucide="${icon}" class="w-20 h-20 text-gray-700"></i>`;
-                const btnHtml = `<a href="${obj.link}" target="_blank" class="w-full py-2 bg-gray-700 hover:bg-amber-500 hover:text-black text-white rounded-lg transition font-medium mt-auto text-center block">${obj.btnText}</a>`;
-                
-                container.innerHTML += `
-                <div class="bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-amber-500/50 transition duration-300 flex flex-col group">
-                    <div class="h-56 bg-black flex items-center justify-center relative overflow-hidden">${imageHtml}${tagHtml}</div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-lg text-white">${obj.title}</h3><span class="text-amber-500 font-bold whitespace-nowrap ml-4">${obj.price}</span></div>
-                        <p class="text-gray-400 mb-4 text-xs">${obj.info}</p>
-                        <p class="text-gray-500 mb-6 text-sm line-clamp-2 flex-grow">${obj.desc}</p>${btnHtml}
-                    </div>
-                </div>`;
-            });
+            
+            const filtered = filterType === 'all' ? myObjects : myObjects.filter(obj => obj.category === filterType);
+            
+            if (filtered.length > 0) {
+                filtered.forEach((obj, index) => {
+                    const icon = obj.type === 'house' ? 'building-2' : 'car-front';
+                    const tagHtml = obj.tag ? `<div class="absolute top-4 left-4 bg-amber-500 text-black text-xs font-bold px-3 py-1 rounded z-10 shadow-lg">${obj.tag}</div>` : '';
+                    const imageHtml = obj.img 
+                        ? `<img src="${obj.img}" alt="${obj.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">`
+                        : `<i data-lucide="${icon}" class="w-20 h-20 text-gray-700"></i>`;
+                    const btnHtml = `<a href="${obj.link}" target="_blank" class="w-full py-2 bg-gray-700 hover:bg-amber-500 hover:text-black text-white rounded-lg transition font-medium mt-auto text-center block">${obj.btnText}</a>`;
+                    
+                    // 加上 animate-fade-in 讓篩選時也有優雅的浮現動畫，並用 inline-style 製作微小的延遲感
+                    container.innerHTML += `
+                    <div class="bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-amber-500/50 transition duration-300 flex flex-col group animate-fade-in" style="animation-delay: ${index * 0.05}s;">
+                        <div class="h-56 bg-black flex items-center justify-center relative overflow-hidden">${imageHtml}${tagHtml}</div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-lg text-white">${obj.title}</h3><span class="text-amber-500 font-bold whitespace-nowrap ml-4">${obj.price}</span></div>
+                            <p class="text-gray-400 mb-4 text-xs">${obj.info}</p>
+                            <p class="text-gray-500 mb-6 text-sm line-clamp-2 flex-grow">${obj.desc}</p>${btnHtml}
+                        </div>
+                    </div>`;
+                });
+            } else {
+                container.innerHTML = `<div class="col-span-full py-12 text-center text-gray-500 animate-fade-in"><i data-lucide="search-x" class="w-12 h-12 mx-auto mb-3 opacity-50"></i><p>目前此分類還沒有上架的物件哦！</p></div>`;
+            }
+            lucide.createIcons();
         }
-        
+
+        function filterObjects(type) {
+            // 更新按鈕樣式
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.className = "filter-btn bg-gray-800 text-gray-300 border border-gray-700 hover:border-amber-500 hover:text-amber-500 px-5 py-2 rounded-full font-bold transition";
+            });
+            const activeBtn = document.querySelector(`.filter-btn[onclick="filterObjects('${type}')"]`);
+            if(activeBtn) {
+                activeBtn.className = "filter-btn active bg-amber-500 text-black px-5 py-2 rounded-full font-bold transition shadow-[0_0_15px_rgba(245,158,11,0.4)]";
+            }
+            // 重新渲染物件
+            renderObjects(type);
+        }
+
+        // 🟢 頁面滾動淡入監聽器 (Scroll Reveal)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // 提早 100px 觸發
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+
+        // 🟢 網頁計數器
         function updateVisitorCounter() {
             const baseDate = new Date('2024-01-01').getTime();
             const now = Date.now();
@@ -412,8 +507,11 @@
             localStorage.setItem('my_visits', (parseInt(localStorage.getItem('my_visits') || '0') + 1).toString());
             document.getElementById('visitor-counter').innerText = totalVisitors.toLocaleString();
         }
+
+        // 初始化執行
+        renderObjects('all');
         updateVisitorCounter();
-        lucide.createIcons();
+        reveal(); // 載入時觸發一次動畫檢查
     </script>
 </body>
 </html>
