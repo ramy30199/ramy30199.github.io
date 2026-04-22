@@ -257,7 +257,6 @@
     <script>
         // 🟢 替每個物件加上 category (分類標籤) 以支援篩選功能
         const myObjects = [
-            // 🟢 更新圖片：楊湖天下 -> S__65306631_0.jpg
             {
                 category: "villa",
                 type: "house", 
@@ -270,7 +269,6 @@
                 link: "https://www.facebook.com/share/p/1BgZ3Uno4m/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 完美復原的第 2 間：遠雄六家匯
             {
                 category: "building",
                 type: "house", 
@@ -283,7 +281,6 @@
                 link: "https://www.facebook.com/share/p/1CWGhrC1dA/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 回到正確位置的第 3 間：富源藝術家2 (副檔名 .jpeg)
             {
                 category: "building",
                 type: "house", 
@@ -296,7 +293,6 @@
                 link: "https://www.facebook.com/share/p/18JKvJ54LW/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 完美復原的第 4 間：空軍一村三區
             {
                 category: "building",
                 type: "house", 
@@ -309,7 +305,6 @@
                 link: "https://www.facebook.com/share/p/1EupzdC3Qc/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 完美復原的第 5 間：孟竹國宅
             {
                 category: "investment",
                 type: "house", 
@@ -322,7 +317,6 @@
                 link: "https://www.facebook.com/share/p/1HSDjpCBvS/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 更新圖片：綠景莊園 -> house6.jpeg
             {
                 category: "villa",
                 type: "house", 
@@ -335,7 +329,6 @@
                 link: "https://www.facebook.com/share/p/17vbRcoKsy/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 竹科滙：圖片更新為 0.png，連結也為您更新了
             {
                 category: "building",
                 type: "house", 
@@ -360,20 +353,19 @@
                 link: "https://www.facebook.com/share/p/188HnYz4tF/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 更新圖片：三上家天下 -> 4.玄關.JPG
+            // 🟢 更新：三上家天下 (圖片改為 0家天下.png，並更新最新文案與連結)
             {
                 category: "building",
                 type: "house", 
-                img: "https://ramy30199.github.io/4.玄關.JPG", 
-                tag: "無敵河岸景", 
-                title: "竹北高鐵 三上家天下 景觀4房", 
+                img: "https://ramy30199.github.io/0家天下.png", 
+                tag: "超大面寬", 
+                title: "竹北高鐵 三上家天下 河景四房", 
                 price: "售 4,788 萬",              
-                info: "4房 ｜ 主+附屬 47.7坪 ｜ 雙平車", 
-                desc: "稀有大面寬河岸綠園道景觀！全陽台設計，鄰近東興國小，步行即達高鐵與學區，大坪數與好視野的終極選擇。", 
-                link: "https://www.facebook.com/share/p/1ApqDxE755/", 
+                info: "3+1房 ｜ 主+附屬 47.7坪 ｜ 雙平車", 
+                desc: "稀有7米大面寬與全陽台設計！每個房間皆有專屬陽台。享無敵河岸綠園道景觀與超大棟距，29%低公設比。東興雙明星學區步行即達。", 
+                link: "https://www.facebook.com/share/p/1HvRU4j2SQ/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 更新圖片：五權五街 -> 5.jpeg
             {
                 category: "investment",
                 type: "house", 
@@ -458,7 +450,6 @@
                 link: "https://www.facebook.com/share/p/1E274k1R4i/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 藝術名宮 (已為您精準對齊大寫 .JPG 並刪除了舊的重複項目)
             {
                 category: "building",
                 type: "house", 
@@ -471,7 +462,6 @@
                 link: "https://www.facebook.com/share/p/1HRNZxyoHM/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 森之青 (已為您精準對齊大寫 .JPEG)
             {
                 category: "building",
                 type: "house", 
@@ -484,7 +474,6 @@
                 link: "https://www.facebook.com/share/p/1ZyCwdbKtQ/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 原美館 (已為您精準對齊小寫 .jpg)
             {
                 category: "building",
                 type: "house", 
@@ -497,7 +486,6 @@
                 link: "https://www.facebook.com/share/p/1AG9ftMGUx/", 
                 btnText: "查看詳細照片"
             },
-            // 🟢 新增物件：中壢透天 (已為您精準對齊 .png)
             {
                 category: "investment",
                 type: "house", 
@@ -524,13 +512,19 @@
                     const icon = obj.type === 'house' ? 'building-2' : 'car-front';
                     const tagHtml = obj.tag ? `<div class="absolute top-4 left-4 bg-amber-500 text-black text-xs font-bold px-3 py-1 rounded z-10 shadow-lg">${obj.tag}</div>` : '';
                     
-                    // 🟢 加入預設防呆質感圖片（避免臉書連結過期導致破圖）
-                    const fallbackImg = 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+                    // 🟢 專屬「照片更新中」防呆底板
+                    const fallbackHtml = `
+                        <div class="absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-gray-900 border-2 border-dashed border-gray-700 z-0 text-center">
+                            <i data-lucide="image-off" class="w-10 h-10 mb-3 text-gray-500 group-hover:scale-110 transition duration-500"></i>
+                            <span class="font-bold text-amber-500 tracking-widest text-lg">照片更新中</span>
+                            <span class="text-xs text-gray-400 mt-2 px-3 py-1 bg-black/60 rounded-full border border-gray-700">有問題請直接來電洽詢</span>
+                        </div>
+                    `;
 
-                    // 遇到錯誤 (onerror) 時自動替換成防呆圖片
+                    // 🟢 遇到錯誤 (onerror) 時自動隱藏壞掉的圖片，露出後方的防呆底板
                     const imageHtml = obj.img 
-                        ? `<img src="${obj.img}" alt="${obj.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.onerror=null; this.src='${fallbackImg}';">`
-                        : `<img src="${fallbackImg}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">`;
+                        ? `${fallbackHtml}<img src="${obj.img}" alt="${obj.title}" class="absolute inset-0 w-full h-full object-cover z-10 group-hover:scale-110 transition duration-500" onerror="this.style.display='none';">`
+                        : fallbackHtml;
                         
                     const btnHtml = `<a href="${obj.link}" target="_blank" class="w-full py-2 bg-gray-700 hover:bg-amber-500 hover:text-black text-white rounded-lg transition font-medium mt-auto text-center block">${obj.btnText}</a>`;
                     
