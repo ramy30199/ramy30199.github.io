@@ -170,7 +170,7 @@
 
     <!-- 精選物件區塊 -->
     <section id="objects" class="py-20 bg-gray-900 px-4">
-        <div class="max-w-5xl mx-auto reveal">
+        <div class="max-w-6xl mx-auto reveal">
             <h2 class="text-3xl font-bold text-center mb-8 text-white">精選推薦<span class="text-amber-500">物件</span></h2>
             
             <!-- 🟢 物件篩選器 (Filter Buttons) -->
@@ -182,7 +182,7 @@
                 <button onclick="filterObjects('suite')" class="filter-btn bg-gray-800 text-gray-300 border border-gray-700 hover:border-amber-500 hover:text-amber-500 px-5 py-2 rounded-full font-bold transition">精選套房</button>
             </div>
 
-            <div id="objects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="objects-container" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- 動態物件產生 -->
             </div>
         </div>
@@ -257,17 +257,18 @@
     <script>
         // 🟢 替每個物件加上 category (分類標籤) 以支援篩選功能
         const myObjects = [
+            // 🟢 楊湖天下：更新為賀成交霸氣樣式！
             {
                 category: "villa",
                 type: "house", 
                 img: "https://ramy30199.github.io/S__65306631_0.jpg", 
-                tag: "超強 CP 值", 
+                tag: "賀成交 🎉", 
                 title: "湖口楊湖天下 朝南大透天", 
-                price: "售 1,468 萬",              
+                price: "<span class='text-red-500 font-bold text-xl drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]'>已成交</span>",              
                 info: "1～4樓 ｜ 建坪 75 坪 ｜ 前院雙平車", 
                 desc: "帝王朝南座向，二樓整層大主臥，頂樓升級太陽能板與氣密窗！近湖口車站與商圈。", 
                 link: "https://www.facebook.com/share/p/1BgZ3Uno4m/", 
-                btnText: "查看詳細照片"
+                btnText: "圓滿成交，感謝支持"
             },
             {
                 category: "building",
@@ -509,14 +510,14 @@
             if (filtered.length > 0) {
                 filtered.forEach((obj, index) => {
                     const icon = obj.type === 'house' ? 'building-2' : 'car-front';
-                    const tagHtml = obj.tag ? `<div class="absolute top-4 left-4 bg-amber-500 text-black text-xs font-bold px-3 py-1 rounded z-10 shadow-lg">${obj.tag}</div>` : '';
+                    const tagHtml = obj.tag ? `<div class="absolute top-3 left-3 bg-amber-500 text-black text-xs font-bold px-2 py-1 rounded z-10 shadow-lg">${obj.tag}</div>` : '';
                     
                     // 🟢 專屬「照片更新中」防呆底板
                     const fallbackHtml = `
                         <div class="absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-gray-900 border-2 border-dashed border-gray-700 z-0 text-center">
-                            <i data-lucide="image-off" class="w-10 h-10 mb-3 text-gray-500 group-hover:scale-110 transition duration-500"></i>
-                            <span class="font-bold text-amber-500 tracking-widest text-lg">照片更新中</span>
-                            <span class="text-xs text-gray-400 mt-2 px-3 py-1 bg-black/60 rounded-full border border-gray-700">有問題請直接來電洽詢</span>
+                            <i data-lucide="image-off" class="w-8 h-8 mb-2 text-gray-500 group-hover:scale-110 transition duration-500"></i>
+                            <span class="font-bold text-amber-500 tracking-widest text-sm">照片更新中</span>
+                            <span class="text-[10px] text-gray-400 mt-2 px-2 py-1 bg-black/60 rounded-full border border-gray-700">有問題請直接來電</span>
                         </div>
                     `;
 
@@ -525,16 +526,16 @@
                         ? `${fallbackHtml}<img src="${obj.img}" alt="${obj.title}" class="absolute inset-0 w-full h-full object-cover z-10 group-hover:scale-110 transition duration-500" onerror="this.style.display='none';">`
                         : fallbackHtml;
                         
-                    const btnHtml = `<a href="${obj.link}" target="_blank" class="w-full py-2 bg-gray-700 hover:bg-amber-500 hover:text-black text-white rounded-lg transition font-medium mt-auto text-center block">${obj.btnText}</a>`;
+                    const btnHtml = `<a href="${obj.link}" target="_blank" class="w-full py-1.5 bg-gray-700 hover:bg-amber-500 hover:text-black text-white rounded-lg transition font-medium mt-auto text-center block text-sm">${obj.btnText}</a>`;
                     
-                    // 加上 animate-fade-in 讓篩選時也有優雅的浮現動畫
+                    // 加上 animate-fade-in 讓篩選時也有優雅的浮現動畫，卡片尺寸微縮
                     container.innerHTML += `
-                    <div class="bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-amber-500/50 transition duration-300 flex flex-col group animate-fade-in" style="animation-delay: ${index * 0.05}s;">
-                        <div class="h-56 bg-black flex items-center justify-center relative overflow-hidden">${imageHtml}${tagHtml}</div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-lg text-white">${obj.title}</h3><span class="text-amber-500 font-bold whitespace-nowrap ml-4">${obj.price}</span></div>
-                            <p class="text-gray-400 mb-4 text-xs">${obj.info}</p>
-                            <p class="text-gray-500 mb-6 text-sm line-clamp-2 flex-grow">${obj.desc}</p>${btnHtml}
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/50 transition duration-300 flex flex-col group animate-fade-in" style="animation-delay: ${index * 0.05}s;">
+                        <div class="h-48 bg-black flex items-center justify-center relative overflow-hidden">${imageHtml}${tagHtml}</div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2"><h3 class="font-bold text-base text-white leading-snug">${obj.title}</h3><span class="text-amber-500 font-bold whitespace-nowrap ml-3">${obj.price}</span></div>
+                            <p class="text-gray-400 mb-3 text-[11px]">${obj.info}</p>
+                            <p class="text-gray-500 mb-4 text-xs line-clamp-2 flex-grow">${obj.desc}</p>${btnHtml}
                         </div>
                     </div>`;
                 });
